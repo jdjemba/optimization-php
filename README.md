@@ -35,18 +35,41 @@ You only have access to the application source code and the database. You don't 
 
 #### Analysis document /10
 
+#### Analysis document /10
+Permalink: Analysis document /10
 - intro
-  - why performance is important
+  - why performance is important: Une application lente va frustrer puis repousser les utilisateurs, donc diminuer les revenus.
 - hypothesis
-  - what is wrong with the application
+  - what is wrong with the application:
+    #### Le chargement des assets
+    - Les fichiers medias, CSS et JS sont longs à charger pour le navigateur
 - tests and measurements
   - what metrics confirm your hypothesis
+    - Performance : 42
+    - Largest Contentful Paint = 12.0 s
+    - Total Blocking Time = 1,470 ms
   - what tools you will use to measure/test
+    - Googe Lighthouse extension
 - solutions
   - what immediate programming solutions could fix the application
+    - Preload des images
+    - Compression des assets
+    - Taille fixe des images ?
 - conclusion
-  - new measurements to confirm your solutions
-  - what could be done in the future to improve the performances again
+  - new measurements to confirm your solutions:
+    - Performance de 75
+    - First Contentful Paint = 1.3 s
+    - Largest Contentful Paint = 10.5 s
+    - Total Blocking Time = 0 ms
+    - Cumulative Layout Shift = 0
+    - Speed Index = 1.3 s
+      ![fork button](assets/after.png)
+    - ![fork button](assets/after2.png)
+
+  - what could be done in the future to improve the performances again:
+    - Stocker les assets sur un CDN et faire du dns-prefetch sur les assets
+    - Re-localiser le VPS du Canada vers Francfort car site francais (même si potentiellement canadien francais)
+    - Augmenter la ram pour 2GB a 4GB (Hetzner)
 
 #### Programming fixes /10
 
